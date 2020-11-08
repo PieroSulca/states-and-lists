@@ -12,6 +12,7 @@ import {
 import Account from '../account/account';
 import './styles.css';
 
+
 const Sidebar = (props) => {
     return (
         <div className="t-sidebar">

@@ -44,3 +44,7 @@
   border: 1px dashed #000;
   width: 35%;
 }
+
+.tweet-feed {
+  padding: 2em;
+}

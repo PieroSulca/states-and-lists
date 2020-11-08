@@ -36,3 +36,16 @@
     font-size: 1.3em;
     text-align: left;
 }
+
+.reactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-reaction {
+    width: 1em;
+    padding-right: 0.5em;
+    transition: .2s all;
+    cursor: pointer;
+}

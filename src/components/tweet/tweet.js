@@ -1,7 +1,20 @@
 import React from 'react';
 import './styles.css';
 
+import HeartOutline from '../../Icons/heart-shape-outline.svg';
+import RetweetOutline from '../../Icons/retweet.svg';
+import CommentOutline from '../../Icons/speech-bubble.svg';
+
 class Tweet extends React.Component{
+    constructor() {
+        super();
+        this.state = {
+            iconRT: RetweetOutline,
+            iconComment: CommentOutline,
+            iconLike: HeartOutline
+        }
+    }
+
     render(){
         return (
             <div className="tweet-container">
@@ -20,10 +33,25 @@ class Tweet extends React.Component{
                         {this.props.content}
                     </p>
                 </div>
+                <div className="reactions">
+                    <div className="row">
+                        <img className="icon-reaction comments" src={this.state.iconComment} alt="comments"></img>
+                        <p>{this.props.comments}</p>
+                    </div>
+                    <div className="row">
+                        <img className="icon-reaction retweets" src={this.state.iconRT} alt="retweets"></img>
+                        <p>{this.props.retweets}</p>
+                    </div>
+                    <div className="row">
+                        <img className="icon-reaction likes" src={this.state.iconLike} alt="likes"></img>
+                        <p>{this.props.likes}</p>
+                    </div>
+                </div>
             </div>
         )
     }
 }
+
 
 export default Tweet;
 

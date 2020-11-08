@@ -1,0 +1,16 @@
+.trend-container {
+    background-color: #e3f1fc;
+    text-align: start;
+    padding: 0.8em 1em;
+    border-bottom: solid 1px;
+}
+
+.trend-container > p {
+    margin: 0;
+    color: rgb(136, 153, 166);
+    font-size: 0.85em;
+}
+
+.trend-container > h5 {
+    margin: 0.6em 0;
+}
