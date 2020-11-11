@@ -41,11 +41,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .icon-reaction {
-    width: 1em;
-    padding-right: 0.5em;
+    width: 2em;
+    margin-right: 0.5em;
+    padding: 0.4em;
     transition: .2s all;
     cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.retweets:hover {
+    color: rgb(24, 190, 100)
+}
+
+.retweets:hover > .retweets-icon {
+    background-color: rgb(24, 190, 100)
+}
+
+.likes:hover {
+    color: rgb(188, 60, 106)
+}
+
+.likes:hover > .likes-icon {
+    background-color: rgb(188, 60, 106)
 }
