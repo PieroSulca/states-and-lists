@@ -10,6 +10,11 @@ class Feed extends React.Component {
         }
     }
 
+    deleteFn = (index) => {
+        feed.splice(index, 1)
+        this.setState({tweets: feed})
+    }
+
     render() {
 
         const {profile, profileName, username, content, display} = {
@@ -23,7 +28,7 @@ class Feed extends React.Component {
         return (
             <div className="tweet-feed">
                 {
-                    this.state.tweets.map( tweet => {
+                    this.state.tweets.map( (tweet, i) => {
                         return (
                             <Tweet
                                 profile={tweet.profile}
@@ -33,6 +38,8 @@ class Feed extends React.Component {
                                 comments={tweet.interaction.comments}
                                 retweets={tweet.interaction.retweets}
                                 likes={tweet.interaction.likes}
+                                deleteTweet={this.deleteFn}
+                                index={i}
                             />
                         )
                     })

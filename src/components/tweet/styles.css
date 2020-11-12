@@ -4,6 +4,7 @@
     width: 100%;
     padding: 0em 1em;
     margin: 0 auto;
+    position: relative;
 }
 
 .row {
@@ -72,3 +73,5 @@
 .likes:hover > .likes-icon {
     background-color: rgb(188, 60, 106)
 }
+
+

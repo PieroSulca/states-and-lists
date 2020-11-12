@@ -1,9 +1,13 @@
 import React from 'react';
 import './styles.css';
+import Dropdown from '../dropdown/dropdown'
 
 import HeartOutline from '../../Icons/heart-shape-outline.svg';
 import RetweetOutline from '../../Icons/retweet.svg';
 import CommentOutline from '../../Icons/speech-bubble.svg';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 
 class Tweet extends React.Component{
     constructor(props) {
@@ -14,6 +18,7 @@ class Tweet extends React.Component{
             iconLike: HeartOutline,
             toggleRT: false,
             toggleLike: false,
+            toggleDrop: false,
             nRetweets: this.props.retweets,
             nLikes: this.props.likes
         }
@@ -45,6 +50,13 @@ class Tweet extends React.Component{
                                 })
     }
 
+    toggleDropFn = () => {
+        this.state.toggleDrop ? 
+                                this.setState({toggleDrop: false}) 
+                                :
+                                this.setState({toggleDrop: true}) 
+    }
+
     render(){
 
         let _styleLike, _styleLikeIcon, _styleRT, _styleRTIcon
@@ -67,6 +79,12 @@ class Tweet extends React.Component{
 
         return (
             <div className="tweet-container">
+                <div className="menu-icon" onClick={this.toggleDropFn}>
+                    <FontAwesomeIcon icon={faEllipsisV} />
+                </div>
+                {
+                    this.state.toggleDrop ? <Dropdown deleteTweet={this.props.deleteTweet} index={this.props.index} closeDropM={this.toggleDropFn}/> : null
+                }
                 <div className="row">
                     <div className="c1">
                         <img src={this.props.profileUrl} alt="profile" />
