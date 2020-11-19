@@ -6,13 +6,32 @@ class Feed extends React.Component {
     constructor() {
         super();
         this.state = {
-            tweets: feed
+            tweets: feed,
         }
     }
 
     deleteFn = (index) => {
-        feed.splice(index, 1)
-        this.setState({tweets: feed})
+        let newFeed = [...this.state.tweets]
+        newFeed.splice(index, 1)
+        this.setState({tweets: newFeed})
+    }
+
+    addTweet = (newTweetContent) => {
+        let newFeed = [...this.state.tweets]
+        const newTweetComplete = {
+            profile: "THINTHIN",
+            username: "thth",
+            content: newTweetContent,
+            interaction: {
+                comments: 0,
+                retweets: 0,
+                likes: 0
+            },
+            verified: false,
+            blocked: false
+        }
+        newFeed = [newTweetComplete, ...newFeed]
+        this.setState({tweets: newFeed, newTweet: ""})
     }
 
     render() {
@@ -38,13 +57,12 @@ class Feed extends React.Component {
                                 comments={tweet.interaction.comments}
                                 retweets={tweet.interaction.retweets}
                                 likes={tweet.interaction.likes}
-                                deleteTweet={this.deleteFn}
+                                deleteTweet={this.deleteFn}                        
                                 index={i}
                             />
                         )
                     })
                 }
-                
             </div>
         );
     }

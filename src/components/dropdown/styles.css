@@ -34,7 +34,7 @@
 
 .dropdown-container:hover > .dropdown-row {
     background: red;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 

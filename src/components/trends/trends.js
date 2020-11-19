@@ -14,7 +14,7 @@ export default class Trends extends Component {
     render(){
         return (
             <>
-                <h3>Qué está pasando</h3>
+                <h3 className="title-trends">Qué está pasando</h3>
                 {this.state.trends.map( t => {
                     return (
                         <Trend category={t.category} title={t.title} tweets={t.noTweets}/>

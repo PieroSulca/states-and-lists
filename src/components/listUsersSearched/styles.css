@@ -1,0 +1,35 @@
+.list-users-container {
+    background: rgb(136, 153, 166);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.profileName {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profileName > h5 {
+    margin: 0;
+    color: black;
+}
+
+.user-profileName > small {
+    color: black;
+}
+
+.user-container {
+    text-decoration: none;
+}
+
+.user-avatar {
+    width: 10%;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}

@@ -1,14 +1,26 @@
-import React from 'react';
-import Trends from '../trends/trends';
+import React from 'react'
+import Trends from '../trends/trends'
+import Search from '../search/search'
+import profiles from '../../profiles'
 import './styles.css';
 
-const SidebarCol = (props) => {
-    return (
-        <div className="t-sidebar-col">
-            {/* <button onClick={props.cambiarImagen}>Cambiar la imagen de perfil</button> */}
-            <Trends />            
-        </div>
-    )
+
+class SidebarCol extends React.Component {
+    constructor (props){
+        super(props)
+        this.state = {
+            profiles: profiles,
+        }
+    }
+
+    render(){
+        return (
+            <div className="t-sidebar-col">
+                <Search profiles={this.state.profiles}/>
+                <Trends />            
+            </div>
+        )
+    }
 }
 
 export default SidebarCol;

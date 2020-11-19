@@ -1,0 +1,33 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-content {
+    background: #e3f1fc;
+    display: flex;
+    align-items: center;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.search-content > input {
+    background: #e3f1fc;
+    border: none;
+    font-size: 1.2em;
+}
+
+.search-content > input:focus {
+    outline: none;
+}
+
+.search-content > input:active {
+    outline: none;
+}
+
+.search-icon {
+    margin-right: 0.5em;
+}
